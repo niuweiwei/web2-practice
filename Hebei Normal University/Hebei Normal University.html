@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>document</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="title">
+		<div id="logo">
+			<img src="images/logo.png">
+			<div class="link">
+				<a href="#">旧版网页</a>
+				<a href="#">English&nbsp;Version</a>
+			</div>
+			<div id="nav">
+				<input type="text" value="搜索" class="keyword">
+				<input type="button" class="search">
+			</div>
+		</div>
+	</div>
+	<div class="banner">
+		<ul>
+			<li id="special" class="cl"><a href="#">首页</a></li>
+			<li class="sub">
+				<a href="#">学校概况</a>
+				<ul class='grand'>
+					<li><a href="#">学校简介</a></li>
+					<li><a href="#">学科专业</a></li>
+					<li><a href="#">治理架构</a></li>
+					<li><a href="#">历史沿革</a></li>
+					<li><a href="#">学校标志</a></li>
+					<li><a href="#">校园风光</a></li>
+					<li><a href="#">校园地图</a></li>
+				</ul>
+			</li>
+			<li class="sub">
+				<a href="#">机构设置</a>
+				<ul class='grand'>
+					<li><a href="#">教学单位</a></li>
+					<li><a href="#">管理服务</a></li>
+					<li><a href="#">附属单位</a></li>
+					<li><a href="#">汇华学院</a></li>
+				</ul>
+			</li>
+			<li class="sub">
+				<a href="#">人才培养</a>
+				<ul class='grand'>
+					<li><a href="#">师资队伍</a></li>
+					<li><a href="#">本科生教育</a></li>
+					<li><a href="#">研究生教育</a></li>
+					<li><a href="#">继续教育</a></li>
+					<li><a href="#">留学生教育</a></li>
+					<li><a href="#">中外合作办学</a></li>
+				</ul>
+			</li>
+			<li class="sub">
+				<a href="#">科学研究</a>
+				<ul class='grand'>
+					<li><a href="#">科学研究平台</a></li>
+					<li><a href="#">自然科学与技术</a></li>
+					<li><a href="#">人文与社会科学</a></li>
+					<li><a href="#">合作交流</a></li>
+					<li><a href="#">学术期刊</a></li>
+				</ul>
+			</li>
+			<li class="sub">
+				<a href="#">招生就业</a>
+				<ul class='grand'>
+					<li><a href="#">本科生招生</a></li>
+					<li><a href="#">研究生招生</a></li>
+					<li><a href="#">继续教育招生</a></li>
+					<li><a href="#">留学生招生</a></li>
+					<li><a href="#">就业服务</a></li>
+				</ul>
+			</li>
+			<li id="middle" class="cl"><a href="#">人才招聘</a></li>
+			<li class="sub">
+				<a href="#">公共服务</a>
+				<ul class='grand'>
+					<li><a href="#">本科生服务</a></li>
+					<li><a href="#">研究生服务</a></li>
+					<li><a href="#">行政事务服务</a></li>
+					<li><a href="#">图书情报服务</a></li>
+					<li><a href="#">预决算公开</a></li>
+					<li><a href="#">生活服务</a></li>
+					<li><a href="#">网络服务</a></li>
+				</ul>
+			</li>
+			<li id="last" class="cl"><a href="#">校友会</a></li>
+		</ul>
+	</div>
+	<div class='father'>
+		<div class="wrap">
+			<a href="#" style="display:block"><img src="images/0.gif"></a>
+			<a href="#"><img src="images/1.jpg"></a>
+			<a href="#"><img src="images/2.jpg"></a>
+			<a href="#"><img src="images/3.jpg" ></a>
+			<a href="#"><img src="images/4.jpg"></a>
+			<a href="#"><img src="images/5.jpg"></a>
+			<a href="#"><img src="images/6.jpg" ></a>
+			<a href="#"><img src="images/7.jpg" ></a>
+			<a href="#"><img src="images/8.jpg" ></a>
+			<div class="btn">
+				<span id="pre" style="display:none"><</span>
+				<span id="next" style="display:none">></span>
+			</div>
+		</div>
+	</div>
+	<script>
+		var box = document.getElementsByClassName('wrap')[0];//若不加[0] box是个数组 没有children
+		var links=box.children;//links是个数组
+		var pre=document.getElementById('pre');
+		var next=document.getElementById('next');
+		var btn=document.getElementsByClassName('btn')[0];
+		var grand=document.getElementsByClassName('grand');
+		var i = 0;
+		for(var j=0;j<grand.length;j++){
+			grand[j].onmouseover=function(){
+				this.className="change";
+			}
+			grand[j].onmouseout=function(){
+				this.className="grand";
+			}
+		}
+		function imgChange(){
+			links[i%9].style.display="none";//需要对长度取模 以达到从最后一张到第一张
+			i++;
+			links[i%9].style.display="block";
+		}
+		var timer = setInterval(imgChange,2000)
+		btn.onmouseover=function(){
+			pre.style.display="block";
+			next.style.display="block";
+		}
+		btn.onmouseout=function(){
+			pre.style.display="none";
+			next.style.display="none";
+		}
+		pre.onclick=function(){
+			links[i%9].style.display="none";
+			i--;
+			if(i<0){
+				i=8;
+			}//针对第一次点击左键 0--变为-1,对i重新赋值
+			links[i%9].style.display="block";
+		}
+		pre.onmouseover=function(){
+			pre.style.color="#fff";
+		}
+		pre.onmouseout=function(){
+			pre.style.color="#000"
+		}
+		next.onclick=function(){
+			imgChange();
+		}
+		next.onmouseover=function(){
+			next.style.color="#fff";
+		}
+		next.onmouseout=function(){
+			next.style.color="#000"
+		}
+	</script>
+</body>
+</html>
