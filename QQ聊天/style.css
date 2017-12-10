@@ -1,0 +1,311 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+ul,ol,li{
+	list-style: none;
+}
+a{
+	text-decoration:none;
+	color:#000;
+	font-size:12px;
+}
+button:focus{
+	outline:none;
+}
+.clearFix:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+#wrap{
+	width: 678px;
+	height: 615px;
+	margin: 10px auto;
+	border: 1px solid #000; 
+	background-color: #f8f7f4;
+}
+/*顶部样式*/
+.header{
+	height: 50px;
+}
+.header>span{
+	float: left;
+	margin: 20px 0 0 12px;
+	line-height: 30px;
+}
+.headImg{
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background: url(img/head.png) center center;
+	background-size: cover;
+}
+/*导航样式*/
+.nav{
+	height: 40px;
+	line-height: 37px;
+	border-bottom: 1px solid #e2e1df;
+}
+.nav>li{
+	float: left;
+	margin: 0 8px;
+	padding: 0 4px;
+	cursor: default;
+	color: #767676;
+}
+.nav>li:last-child:after{
+	content: "▼";
+	font-size: 10px;
+	margin-left: 5px;
+}
+.nav>li:hover{
+	color: #000;
+}
+.nav>.active{
+	color: #000;
+	border-bottom: 3px solid #009bdb;
+}
+/*底部主体样式*/
+.footer>div{
+	float: left;
+}
+.notice{
+	width: 200px;
+	height: 525px;
+	border-left: 1px solid #e2e1df;
+}
+/*消息框样式*/
+.talk{
+	width: 476px;
+}
+.talkMsg{
+	width: 476px;
+	height: 400px;
+	overflow-y: auto;
+	border-bottom: 1px solid #e2e1df;
+}
+.time{
+	text-align: center;
+	color: #808080;
+	font-size: 10px;
+	line-height: 30px;
+}
+.talkInp{
+	height: 124px;
+}
+.myHead{
+	float: right;
+	margin-right: 12px;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background: url(img/myHead.jpg) center center;
+	background-size: cover;
+}
+.content{
+	float: right;
+}
+.conText{
+	padding: 10px;
+	max-width: 380px;
+	line-height: 22px;
+	border-radius: 8px;
+	margin-right: 10px;
+	font-size: 12px;
+	float: left;
+	background-color: #dfdddb;
+}
+.area{
+	width: 456px;
+	padding: 5px 10px;
+	height: 50px;
+	resize: none;
+	outline: none;
+	border: none;
+	background-color: #f8f7f4;
+}
+.btn{
+	float: right;
+}
+.btn li{
+	font-weight: bold;
+	cursor: default;
+	display: block;
+	float: left;
+	height: 24px;
+	line-height: 24px;
+	padding: 0 16px;
+	margin-right: 12px;
+	border-radius: 4px;
+	font-size: 12px;
+	background-color: #dbd1be;
+}
+.send{
+	position: relative;
+}
+.send:after{
+	content: "▼";
+	color: #6e695f;
+	margin-left: 15px;
+}
+.warning{
+	width: 150px;
+	height: 50px;
+	border: 1px solid lightblue;
+	border-radius: 8px;
+	padding: 0 5px;
+	position: absolute;
+	left: -70px;
+	top: -55px;
+	display: none;
+}
+.rightBox{
+	width:136px;
+	height:152px;
+	position:absolute;
+	z-index:999;
+	display:none;
+}
+/*消息页面中左键形成的选择栏*/
+.choice{
+	background-color:#fff;
+	border:1px solid rgb(182,194,204);
+}
+.choice>li{
+	width:100%;
+	height:26px;
+	position:relative;
+}
+.choice >li>.fill{
+	display:block;
+	height:26px;
+	width:25px;
+	background:rgb(236,237,237);
+}
+.choice>.list:hover{
+	background:rgb(0,155,219);
+}
+.choice>.list:hover>.fill{
+	background:rgb(0,155,219);
+}
+.choice>li>a{
+	float:left;
+	position:absolute;
+	left:30px;
+	top:5px;
+	padding-top:1px;
+	padding-bottom:1px;
+	text-align:26px;
+	}
+#special{
+	color:rgb(127,137,145);
+}
+.choice >li>a>.line{
+	display:inline;
+	text-decoration:underline;
+}
+.rate{
+	float:left;
+	width:86px;
+	height:182px;
+	border:1px solid rgb(182,194,204);
+	background-color:#fff;
+	position:absolute;
+	left:138px;
+	top:0px;
+	display:none;
+}
+.rate>ul>li{
+	height:26px;
+	position:relative;
+}
+.rate>ul>li>.fill{
+	display:block;
+	height:26px;
+	width:25px;
+	background:rgb(236,237,237);
+}
+.rate>ul>li:hover{
+		background-color:rgb(0,155,219);
+}
+.rate>ul>li:hover>.fill{
+	background-color:rgb(0,155,219);
+}
+.rate>ul>li>a{
+	float:left;
+	font-size:12px;
+	position:absolute;
+	left:30px;
+	top:5px;
+}
+/*消息框上方导航栏的样式*/
+.tools{
+	width:476px;
+	height:30px;
+	border-top:1px solid rgb(208,210,215);
+}
+.tools>ul>li{
+	float:left;
+	width:36px;
+	height:30px;
+}
+.settings{
+	float:inherit;
+	width:30px;
+	height:26px;
+	margin:2px 3px;
+	border:none;
+	background:rgb(248,247,244);
+}
+.tools>span{
+	display:block;
+	width:70px;
+	height:26px;
+	float:right;
+	margin:2px 0px;
+}
+.tools>span:hover{
+	background:rgb(223,221,219);
+}
+.tools>span>a{
+	margin-left:5px;
+	line-height:26px;
+}
+.tools>span>a:after{
+	content:"▼";
+	color:rgb(136,136,136);
+}
+/*最近表情框的样式*/
+.recently{
+	width:198px;
+	height:126px;
+	position:absolute;
+	top:376px;
+	z-index:999;
+}
+.recently>table{
+	width:100%;
+	height:100%;
+	background:#fff;
+}
+.col td{
+	width:30px;
+	height:30px;
+	position:relative;
+}
+.em:hover{
+	background:rgb(243,243,243);
+}
+/*全部的表情*/
+.alle{
+	width:312px;
+	height:200px;
+	border:1px solid #6699ff;
+	position:absolute;
+	top:302px;
+	z-index:1999;
+	background-color:#fff;
+	overflow-y:auto;
+	display:none;
+}
