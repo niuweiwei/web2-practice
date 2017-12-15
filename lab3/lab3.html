@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>document</title>
+</head>
+	<style>
+		*{
+			padding:0px;
+			margin:0px;
+		}
+		ul,li,ol{
+			list-style:none;
+		}
+		.container{
+			height:281px;
+			width:483px;
+			border:1px solid rgb(128,128,128);
+			margin:0px auto;
+		}
+		.banner{
+			background-image:url(images/bg.jpg);
+			background-repeat:both;
+			height:30px;
+		}
+		.banner p{
+			font-size:12px;
+			line-height:30px;
+			margin-left:15px;
+		}
+		.wrap{
+			position:relative;
+			margin-top:10px;
+			margin-left:15px;
+		}
+		.wrap>ul>li{
+			float:left;
+		}
+		#comment{
+			width:452px;
+			height:172px;
+			display:block;
+			margin-left:15px;
+			font-size:16px;
+		}
+		select{
+			float:right;
+			font-size:12px;
+			color:rgb(128,128,128);
+			margin-right:20px;
+			margin-top:2px;
+		}
+	</style>
+<body>
+	<div class="container">
+		<div class="banner">
+			<p>宝贝与描述相符(打分匿名)</p>
+		</div>
+		<div class="wrap">
+			<ul>
+				<li><img src="images/star0.png" onmouseout="hide()" onclick="qd(0)"></li>
+				<li><img src="images/star0.png" onmouseout="hide()" onclick="qd(1)"></li>
+				<li><img src="images/star0.png" onmouseout="hide()" onclick="qd(2)"></li>
+				<li><img src="images/star0.png" onmouseout="hide()" onclick="qd(3)"></li>
+				<li><img src="images/star0.png" onmouseout="hide()" onclick="qd(4)"></li>
+			</ul>
+		</div>
+		<textarea id="comment"></textarea>
+		<div style="display:none">
+			<p class="words">宝贝超级赞，很喜欢！</p>
+			<p class="words">宝贝还不错！</p>
+			<p class="words">宝贝一般，继续努力！</p>
+			<p class="words">宝贝不太符合描述，一般般!</p>
+			<p class="words">宝贝差评，完全不符!</p>
+		</div>
+		<select>
+			<option value="public">公开评论</option>
+			<option value="private">私密评论</option>
+		</select>
+	</div>
+</body>
+	<script type="text/javascript" src="event.js"></script>
+</html>
