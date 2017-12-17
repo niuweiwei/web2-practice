@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>图片自动滚动</title>
+</head>
+<style type="text/css">
+	#picScroll{
+		white-space:nowrap;
+		overflow:hidden;
+		width:600px;
+		height:229px;
+		margin:0px auto;
+	}
+	#picScroll1{
+		display:block;
+		width:1400px;
+	}
+	#picScroll2{
+		display:block;
+		width:1400px;
+	}
+</style>
+<body>
+	<div id="picScroll">
+		<span id="picScroll1">
+			<img src="images/1.jpg" width="249px" height="229px"/>
+			<img src="images/2.jpg" width="249px" height="229px"/>
+			<img src="images/3.jpg" width="249px" height="229px"/>
+			<img src="images/4.jpg" width="249px" height="229px"/>
+			<img src="images/5.jpg" width="249px" height="229px"/>
+			<img src="images/6.jpg" width="249px" height="229px"/>
+			<img src="images/7.jpg" width="249px" height="229px"/>
+			<img src="images/8.jpg" width="249px" height="229px"/>
+		</span>
+		<span id="picScroll2">
+			<img src="images/1.jpg" width="249px" height="229px"/>
+			<img src="images/2.jpg" width="249px" height="229px"/>
+			<img src="images/3.jpg" width="249px" height="229px"/>
+			<img src="images/4.jpg" width="249px" height="229px"/>
+			<img src="images/5.jpg" width="249px" height="229px"/>
+			<img src="images/6.jpg" width="249px" height="229px"/>
+			<img src="images/7.jpg" width="249px" height="229px"/>
+			<img src="images/8.jpg" width="249px" height="229px"/>
+		</span>
+	 </div> 	
+</body>
+	<script type="text/javascript">
+		var picScroll=document.getElementById('picScroll');
+		var picScroll1=document.getElementById('picScroll1');
+		var picScroll2=document.getElementById('picScroll2');
+		var timer;
+		//图片向左滚动
+		function changToLeft(){
+			if(picScroll.scrollLeft>=(picScroll1.offsetWidth+picScroll2.offsetWidth))
+				picScroll.scrollLeft=0;
+			else{
+				picScroll.scrollLeft+=25;
+			}
+			console.log(picScroll.scrollLeft);
+		}
+		timer=setInterval(changToLeft,1000);
+		//鼠标划入
+		picScroll.onmouseover=function(){
+			clearInterval(timer);
+		}
+		//鼠标划出
+		picScroll.onmouseout=function(){
+			timer=setInterval(changToLeft,1000);
+		}
+	</script>
+</html>
